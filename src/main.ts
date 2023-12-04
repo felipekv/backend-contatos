@@ -12,6 +12,11 @@ async function bootstrap() {
       transformOptions: { groups: ['transform'] },
     }),
   );
+  app.enableCors({
+    origin: 'http://localhost:3001',
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+    credentials: true,
+  });
   const config = new DocumentBuilder()
     .setTitle('Contacts API')
     .setDescription('Manage your contacts')
